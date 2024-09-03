@@ -1,0 +1,52 @@
+body{
+    font-family:Arial;
+    background-color: black;
+}
+.list,
+.input{
+    display: grid;
+    grid-template-columns: 200px 180px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+.input{
+    margin-bottom: 20px;
+    height: 40px;
+}
+.boxtext,
+.dateinput,
+.add
+{
+    font-size: 17px;
+}
+.add{
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.delete{
+    background-color: darkred;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    font-size: 17px;
+}
+.list{
+    align-items: center;
+    color: white;
+}
+.todomain{
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+.list{
+    font-size: 18px;
+}
+.main{
+    border: 1px white solid;
+    width: 500px;
+    padding: 20px;
+}

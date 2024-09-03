@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="todo-list.css">
+<body>
+    <div class="main">
+        <p class="todomain">Todo List</p>
+        <div class="input">
+        <input type="text" placeholder="Todo Name" class="boxtext">
+        <input type="date" class="dateinput">
+        <button class="add"
+        onclick="
+        Todo()
+        ">Add</button>
+    </div>
+    <div class="list"></div>
+    </div>
+    <script>
+        let array=[]
+        function todofinal(){
+            let todohtml='';
+            for(let i=0;i<array.length;i++){
+                let todovalue=array[i];
+                let name=todovalue.name;
+                let date=todovalue.date;
+                let html=
+                `
+                <div>${name}</div> 
+                <div>${date}</div>
+                <button class="delete "onclick="
+                array.splice(${i},1)
+                todofinal()
+                ">
+                delete
+                </button>
+                `
+                todohtml+=html;
+            }
+            document.querySelector(".list").innerHTML=todohtml;
+        }
+        function Todo(){
+            let value=document.querySelector(".boxtext")
+            let date=document.querySelector(".dateinput")
+            let v1=value.value
+            let d1=date.value
+            localStorage.setItem('name1',v1);
+            localStorage.setItem('date1',d1);
+            array.push(
+                {
+                    name:v1,
+                    date:d1,
+                }
+            )
+            console.log(array)
+            value.value='';
+            date.value=''
+            todofinal();
+        }
+    </script>
+</body>
+</html>
